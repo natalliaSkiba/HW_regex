@@ -15,7 +15,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         CreateCard createCards = new CreateCard();
-        List<Card> cardList = createCards.getListCards();
+        createCards.getListCards();
+        List<Card> cardList = createCards.getCardList();
         System.out.println(cardList);
 
         DataStorage dataStorage = new DataStorage();

@@ -6,11 +6,13 @@ import java.util.List;
 // создание объектов типа Card
 public class CreateCard {
     private List<Card> cardList = new ArrayList<>();
-    public List<Card> getListCards() {
+    public List<Card> getCardList() {
+        return cardList;
+    }
+    public void getListCards() {
         Generator gt = new Generator();
         for (int i = 0; i < 3; i++) {
             cardList.add(new Card(gt.generateFirstName(), gt.generateLastName(), gt.generateNumber(), gt.generateData(), gt.generateCVV()));
         }
-        return cardList;
     }
 }
