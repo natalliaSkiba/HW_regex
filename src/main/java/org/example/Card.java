@@ -3,14 +3,15 @@ package org.example;
 import lombok.*;
 @Getter
 @ToString
-@AllArgsConstructor
-@NoArgsConstructor
 @Setter
-public class Cart {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Card {
     private String firstName;
     private String lastName;
     private String number;
     private String data;
     private String cvv;
+
 
 }

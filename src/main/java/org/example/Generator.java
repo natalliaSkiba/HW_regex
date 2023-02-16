@@ -1,14 +1,17 @@
 package org.example;
 
 import com.github.javafaker.Faker;
+
 import java.time.LocalDate;
 import java.util.Random;
 
+// Класс генерирует карту клинта сулучайным образом
 public class Generator {
-    static Random rnd = new Random();
-    static Faker faker = new Faker();
+    private Random rnd = new Random();
+    private Faker faker = new Faker();
 
-    public static String generateNumber() {
+
+    public String generateNumber() {
         String s = "";
         for (int i = 0; i < 16; i++) {
             int n = rnd.nextInt(0, 10);
@@ -16,7 +19,7 @@ public class Generator {
         }
         return s;
     }
-    public static String generateCVV() {
+    public String generateCVV() {
         String s = "";
         for (int i = 0; i < 3; i++) {
             int n = rnd.nextInt(0, 10);
@@ -24,7 +27,7 @@ public class Generator {
         }
         return s;
     }
-    public static String generateData() {
+    public String generateData() {
         String month_s;
         String year_s;
         int m = rnd.nextInt(1, 13);
@@ -36,12 +39,12 @@ public class Generator {
         int year = rnd.nextInt(LocalDate.now().getYear(), LocalDate.now().getYear() + 5);
         year_s = "" + year;
         String s = month_s + "/" + year_s.substring(2, 4);
-         return s;
+        return s;
     }
-    public static String generateFirstName() {
+    public String generateFirstName() {
         return faker.name().firstName();
     }
-    public static String generateLastName() {
+    public String generateLastName() {
         return faker.name().lastName();
     }
 }
