@@ -14,7 +14,7 @@ import java.util.List;
 //        Все отдельным проектом
 public class Main {
     public static void main(String[] args) {
-        CreateCard createCards = new CreateCard();
+        CreateCard createCards = new CreateCard(20);
         createCards.getListCards();
         List<Card> cardList = createCards.getCardList();
         System.out.println(cardList);
@@ -23,10 +23,10 @@ public class Main {
         List<String> stringList = dataStorage.getListCardsAsListString(cardList);
         System.out.println(stringList);
 
-        OutputFile outputFile = new OutputFile();
+        OutputFile outputFile = new OutputFile("output.txt");
         outputFile.writeFile(stringList);
 
-        InputFile inputFile = new InputFile();
+        InputFile inputFile = new InputFile("output.txt");
         ParseFile parseFile = new ParseFile();
         List<Card> newCardList = parseFile.parseInput(inputFile.readFile());
         parseFile.printAll(newCardList);

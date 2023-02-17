@@ -9,8 +9,6 @@ import java.util.Random;
 public class Generator {
     private Random rnd = new Random();
     private Faker faker = new Faker();
-
-
     public String generateNumber() {
         String s = "";
         for (int i = 0; i < 16; i++) {
